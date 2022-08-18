@@ -6,12 +6,15 @@ data de criação: 18/08/2022
 */
 
 #include <Arduino.h>
-
+/*#####################parte 1 ###############################*/
 // verificando a precisão do clock do arduino
 // 2^(clock_divisor) = clock_freq
 // 2^10 = 1024 (variando de 0 a 1023)
 // se usar 5v (0v = 0) e 5v (5v = 1023)
 // 5/1023 = 0.0048828125 ~ 0.005 ~ 5mV
+
+/*#####################parte 2 ###############################*/
+usando o 
 
 // variaveis globais
 int pinPorta = A0; // porta do pino analógico A0
