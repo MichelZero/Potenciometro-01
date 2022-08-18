@@ -20,10 +20,10 @@ void loop() {
   delay(1000); // esperando 1 segundo
   // #### 1.1 ####
   //Serial.println("quebrando linha") 
-  
+
   // #### 1.2 ####
   // adicionando uma quebra de linha com o caractere \n
-  Serial.println("quebrando linha");
+  Serial.println("\nquebrando linha");
 
 
 }
