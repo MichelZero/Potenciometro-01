@@ -14,7 +14,9 @@ data de criação: 18/08/2022
 // 5/1023 = 0.0048828125 ~ 0.005 ~ 5mV
 
 /*#####################parte 2 ###############################*/
-usando o 
+//usando o PWM
+// o PWM é um método de controle de frequência que permite ao Arduino controlar o pino digital como um gerador de um sinal PWM.
+// controlar a luminosidade do LED como um PWM na porta digital 9.
 
 // variaveis globais
 int pinPorta = A0; // porta do pino analógico A0
@@ -22,11 +24,23 @@ int pinLed = 13; // porta do pino digital 13
 int valorAnalogico = 0; // valor lido do pino analógico
 int valorDigital = 0; // valor lido do pino digital
 
+/*########  2.1  ########*/
+// usando o PWM
+int pinLedPWM = 9; // porta do pino digital PWM 9
+int valorPWM = 0; // valor lido do pino PWM
+int pinPotencia = 0; // configurando o valor inicial do PWM
+
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600); // inicializando a serial com 9600 bps
   pinMode(pinPorta, INPUT); // configurando o pino analógico como entrada
   pinMode(pinLed, OUTPUT); // configurando o pino digital como saída
+
+  /*########  2.1  ########*/
+  // usando o PWM
+  pinMode(pinLedPWM, OUTPUT); // configurando o pino digital como saída para o PWM
+  
 }
 
 void loop() {
@@ -45,4 +59,11 @@ void loop() {
     digitalWrite(pinLed, LOW); // apaga o led
   }
 
+  /*########  2.1  ########*/
+  // usando o PWM
+  valorPWM = analogRead(pinPotencia);
+  Serial.print("Valor lido no pino 9: "); // imprimindo na serial o valor lido no pino 9
+  Serial.println(valorPWM); // imprimindo na serial o valor lido no pino 9
+  analogWrite(pinLedPWM, valorPWM / 4); // dividindo o valor lido no pino 9 por 4 para controlar a intensidade do PWM
+  
 }
