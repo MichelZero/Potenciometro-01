@@ -25,5 +25,4 @@ void loop() {
   // adicionando uma quebra de linha com o caractere \n
   Serial.println("\nquebrando linha");
 
-
 }
